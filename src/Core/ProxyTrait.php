@@ -112,7 +112,7 @@ trait ProxyTrait
     {
         $controller = $this->_controller();
         list(, $modelClass) = pluginSplit($controller->modelClass);
-        return $controller->{$modelClass};
+        return $controller->loadModel(null, $this->config('modelFactory'));
     }
 
     /**
